@@ -1,0 +1,24 @@
+<h1>Filmes</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <tbody>
+    <tr>
+    	<th>Titulo</th>
+      <th>Descrição</th>
+      <th>Diretor</th>
+    </tr>
+
+    <tr *ngFor="let filme of filmes">
+      <td>
+        {{filme.title}}
+      </td>
+      <td>
+        {{filme.opening_crawl}}
+      </td>
+      <td>
+        {{filme.director}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<input type="submit" value="Voltar" type="submit" class="btn btn-success" (click)="voltarListagemPessoas()">

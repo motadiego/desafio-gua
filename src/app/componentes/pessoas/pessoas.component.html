@@ -1,0 +1,39 @@
+<style>
+.btn:active, .btn:focus, .btn:active:focus, .btn.active:focus {
+  border-color: transparent;
+  outline: none;
+}
+</style>
+
+<h1>Pessoas</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead  class="thead-dark">
+      <tr>
+        <th>Nome</th>
+        <th>Ano Nascimento</th>
+        <th>Raça</th>
+        <th>Sexo</th>
+        <th>Planeta Natal</th>
+        <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let pessoa of pessoas">
+        <td>{{pessoa.name}} </td>
+        <td>{{pessoa.birth_year}}</td>
+        <td>{{pessoa.species}}</td>
+        <td>{{pessoa.gender}}</td>
+        <td>{{pessoa.homeworld}}</td>
+        <td>
+          <a (click)="irParaFilmes(pessoa.films)" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+             Ver Filmes
+          </a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<input type="submit" value="Anterior"  type="submit" class="btn btn-success" (click)="anterior()" [disabled]="!isPaginaAnterior">
+{{page}}
+<input type="submit" value="Prómimo" type="submit" class="btn btn-success" (click)="proximo()" [disabled]="!isProximaPagina">
